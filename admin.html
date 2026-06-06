@@ -13,6 +13,14 @@
 
 <body>
 
+    <header class="dashboard-header">
+    <img src="images/logo.png" alt="She Can Foundation Logo">
+    <div>
+        <h1>She Can Foundation</h1>
+        <p>Volunteer Management Dashboard</p>
+    </div>
+</header>
+
 <section class="volunteer">
 
 <div class="admin-header">
@@ -21,44 +29,57 @@
 
     <div>
 
-        <button id="clearAllBtn">
-            Clear All Records
-        </button>
+<button id="clearAllBtn">
+    Clear All Records
+</button>
 
-        <button id="downloadBtn">
-            Export CSV
-        </button>
+<button id="downloadBtn">
+    Export CSV
+</button>
 
-    </div>
+<button
+onclick="window.open('index.html','_blank')">
+    Visit Website
+</button>
+
+</div>
+
+</div>
+
+    <div class="welcome-card">
+    <h2>Welcome Admin 👋</h2>
+    <p>
+        Monitor volunteer registrations, track interests,
+        and manage outreach programs from one place.
+    </p>
+</div>
 
 <div class="dashboard-stats">
 
     <div class="stat-box">
         <h2 id="totalVolunteers">0</h2>
-        <p>Total Volunteers</p>
+        <p>👥 Total Volunteers</p>
     </div>
 
     <div class="stat-box">
         <h2 id="educationCount">0</h2>
-        <p>Education</p>
+        <p>📚 Education</p>
     </div>
 
     <div class="stat-box">
         <h2 id="healthcareCount">0</h2>
-        <p>Healthcare</p>
+        <p>🏥 Healthcare</p>
     </div>
 
     <div class="stat-box">
         <h2 id="leadershipCount">0</h2>
-        <p>Leadership</p>
+        <p>🎯 Leadership</p>
     </div>
 
     <div class="stat-box">
         <h2 id="skillCount">0</h2>
-        <p>Skill Development</p>
+        <p>💼 Skill Development</p>
     </div>
-
-</div>
 
 </div>
 
@@ -136,6 +157,20 @@ placeholder="Search by Name..."
 </table>
 
 </section>
+
+<footer class="dashboard-footer">
+
+    <img src="images/logo.png" alt="Logo">
+
+    <p>
+        She Can Foundation Volunteer Management Dashboard
+    </p>
+
+    <p>
+        Built by Tanay Singh • 2026
+    </p>
+
+</footer>
 
 <script>
 

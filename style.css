@@ -748,3 +748,81 @@ select{
 .repo-link a:hover{
     color:#e84393;
 }
+
+.dashboard-header{
+display:flex;
+align-items:center;
+gap:20px;
+padding:20px 40px;
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,0.08);
+margin-top:-90px;
+}
+
+.dashboard-header img{
+width:70px;
+height:70px;
+border-radius:50%;
+}
+
+.dashboard-header h1{
+margin:0;
+color:#8e44ad;
+}
+
+.dashboard-header p{
+margin:0;
+color:#666;
+}
+
+.welcome-card{
+background:white;
+padding:25px;
+border-radius:15px;
+margin:30px 0;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.dashboard-footer{
+    margin-top:50px;
+    padding:30px;
+    text-align:center;
+    background:white;
+    border-top:1px solid #ddd;
+}
+
+.dashboard-footer img{
+    width:50px;
+    margin-bottom:10px;
+}
+
+.dashboard-footer p{
+    margin:5px 0;
+    color:#666;
+}
+
+@media(max-width:768px){
+
+    .hero-content h1{
+        font-size:2.2rem;
+    }
+
+    .logo-container h1{
+        font-size:1rem;
+    }
+
+    .logo-container img{
+        width:45px;
+        height:45px;
+    }
+
+    .dashboard-stats{
+        flex-wrap:wrap;
+        gap:15px;
+    }
+
+    .stat-box{
+        width:45%;
+    }
+
+}

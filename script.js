@@ -27,6 +27,7 @@ let valid = true;
 document.getElementById("nameError").textContent="";
 document.getElementById("emailError").textContent="";
 document.getElementById("messageError").textContent="";
+document.getElementById("interestError").textContent="";
 
 if(nameInput.value.trim()===""){
 
@@ -43,6 +44,18 @@ document.getElementById("emailError")
 .textContent="Enter valid email";
 
 valid=false;
+
+}
+
+const interest =
+document.getElementById("interest");
+
+if(interest.value===""){
+
+document.getElementById("interestError")
+.textContent="Please select an interest area";
+
+    valid = false;
 
 }
 

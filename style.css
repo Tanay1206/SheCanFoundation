@@ -311,10 +311,14 @@ small{
     pointer-events:none;
 
     transition:0.5s;
+
+    z-index:9999;
 }
 
 #toast.show-toast{
+
     opacity:1;
+
 }
 
 table{

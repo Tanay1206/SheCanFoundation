@@ -733,3 +733,18 @@ select{
     transform:translateY(-5px);
 
 }
+
+.repo-link{
+    margin-top:20px;
+}
+
+.repo-link a{
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.repo-link a:hover{
+    color:#e84393;
+}

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<section class="volunteer">
+
+<div class="admin-header">
+
+    <h1>Volunteer Dashboard</h1>
+
+    <div>
+
+        <button id="clearAllBtn">
+            Clear All Records
+        </button>
+
+        <button id="downloadBtn">
+            Export CSV
+        </button>
+
+    </div>
+
+<div class="dashboard-stats">
+
+    <div class="stat-box">
+        <h2 id="totalVolunteers">0</h2>
+        <p>Total Volunteers</p>
+    </div>
+
+    <div class="stat-box">
+        <h2 id="educationCount">0</h2>
+        <p>Education</p>
+    </div>
+
+    <div class="stat-box">
+        <h2 id="healthcareCount">0</h2>
+        <p>Healthcare</p>
+    </div>
+
+    <div class="stat-box">
+        <h2 id="leadershipCount">0</h2>
+        <p>Leadership</p>
+    </div>
+
+    <div class="stat-box">
+        <h2 id="skillCount">0</h2>
+        <p>Skill Development</p>
+    </div>
+
+</div>
+
+</div>
+
+<h2>Volunteer Interest Analytics</h2>
+
+<div class="chart-container">
+
+<div class="chart-bar">
+
+<span>Education</span>
+
+<div class="bar">
+<div id="educationBar"></div>
+</div>
+
+</div>
+
+<div class="chart-bar">
+
+<span>Healthcare</span>
+
+<div class="bar">
+<div id="healthcareBar"></div>
+</div>
+
+</div>
+
+<div class="chart-bar">
+
+<span>Leadership</span>
+
+<div class="bar">
+<div id="leadershipBar"></div>
+</div>
+
+</div>
+
+<div class="chart-bar">
+
+<span>Skill Development</span>
+
+<div class="bar">
+<div id="skillBar"></div>
+</div>
+
+</div>
+
+</div>
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search by Name..."
+>
+
+<table id="dataTable">
+
+<thead>
+
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Message</th>
+<th>Date</th>
+<th>Interest</th>
+<th>Action</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+</tbody>
+
+</table>
+
+</section>
+
+<script>
+
+const data =
+JSON.parse(localStorage.getItem("volunteers")) || [];
+
+document.getElementById("totalVolunteers")
+.textContent = data.length;
+let education = 0;
+let healthcare = 0;
+let leadership = 0;
+let skill = 0;
+
+data.forEach(volunteer=>{
+
+if(volunteer.interest==="Education"){
+education++;
+}
+
+if(volunteer.interest==="Healthcare"){
+healthcare++;
+}
+
+if(volunteer.interest==="Leadership"){
+leadership++;
+}
+
+if(volunteer.interest==="Skill Development"){
+skill++;
+}
+
+});
+
+document.getElementById("educationCount")
+.textContent = education;
+
+document.getElementById("healthcareCount")
+.textContent = healthcare;
+
+document.getElementById("leadershipCount")
+.textContent = leadership;
+
+document.getElementById("skillCount")
+.textContent = skill;
+
+const total =
+data.length || 1;
+
+document.getElementById("educationBar")
+.style.width =
+(education/total*100) + "%";
+
+document.getElementById("healthcareBar")
+.style.width =
+(healthcare/total*100) + "%";
+
+document.getElementById("leadershipBar")
+.style.width =
+(leadership/total*100) + "%";
+
+document.getElementById("skillBar")
+.style.width =
+(skill/total*100) + "%";
+
+const tbody =
+document.querySelector("tbody");
+
+data.forEach((volunteer,index)=>{
+
+tbody.innerHTML += `
+
+<tr>
+
+<td>${volunteer.name}</td>
+
+<td>${volunteer.email}</td>
+
+<td>${volunteer.message}</td>
+
+<td>${volunteer.date}</td>
+
+<td>${volunteer.interest}</td>
+
+<td>
+<button onclick="deleteVolunteer(${index})">
+Delete
+</button>
+</td>
+
+</tr>
+
+`;
+
+});
+
+function deleteVolunteer(index){
+
+data.splice(index,1);
+
+localStorage.setItem(
+"volunteers",
+JSON.stringify(data)
+);
+
+location.reload();
+
+}
+
+const clearBtn =
+document.getElementById("clearAllBtn");
+
+clearBtn.addEventListener("click",()=>{
+
+if(confirm("Delete all records?")){
+
+localStorage.removeItem("volunteers");
+
+location.reload();
+
+}
+
+});
+
+const downloadBtn =
+document.getElementById("downloadBtn");
+
+downloadBtn.addEventListener("click",()=>{
+
+let csv =
+"Name,Email,Interest,Message,Date\n";
+
+data.forEach(volunteer=>{
+csv += `"${volunteer.name}","${volunteer.email}","${volunteer.interest}","${volunteer.message}","${volunteer.date}"\n`;
+});
+
+const blob =
+new Blob([csv],
+{type:"text/csv"});
+
+const url =
+window.URL.createObjectURL(blob);
+
+const a =
+document.createElement("a");
+
+a.href = url;
+
+a.download =
+"volunteers.csv";
+
+a.click();
+
+});
+
+const searchInput =
+document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup",()=>{
+
+const value =
+searchInput.value.toLowerCase();
+
+const rows =
+document.querySelectorAll("tbody tr");
+
+rows.forEach(row=>{
+
+const name =
+row.children[0]
+.innerText
+.toLowerCase();
+
+row.style.display =
+name.includes(value)
+? ""
+: "none";
+
+});
+
+});
+
+</script>
+
+</body>
+
+</html>

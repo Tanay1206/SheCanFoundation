@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+name="description"
+content="She Can Foundation empowers women through education, healthcare awareness, leadership programs and community initiatives.">
+    <title>She Can Foundation | Empowering Women</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="icon" href="images/logo.png">
+
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+    <img src="images/logo.png" alt="Logo">
+    <span>She Can Foundation</span>
+
+</div>
+
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li><a href="#volunteer">Volunteer</a></li>
+            </ul>
+
+            <div id="menuBtn" class="menu-btn">
+☰
+</div>
+
+            <button id="themeToggle">
+🌙
+</button>
+
+        </nav>
+    </header>
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+    <img
+        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+        alt="Women Empowerment"
+        class="hero-image">
+
+
+            <h1>
+                Empowering Women,
+                Transforming Communities
+            </h1>
+
+            <p>
+                Supporting women through education,
+                leadership and community initiatives.
+            </p>
+
+            <a href="#volunteer" class="btn">
+                Join Our Mission
+            </a>
+
+        </div>
+
+    </section>
+
+    <section id="about" class="about hidden">
+
+        <h2>About Us</h2>
+
+        <p>
+            She Can Foundation is dedicated to creating opportunities for women
+            through education, skill development, healthcare awareness and
+            leadership programs.
+        </p>
+
+    </section>
+
+    <section id="impact" class="impact hidden">
+
+        <h2>Our Impact</h2>
+
+        <div class="stats">
+
+            <div class="card">
+                <h3 class="counter" data-target="500">0</h3>
+                <p>Women Supported</p>
+            </div>
+
+            <div class="card">
+                <h3 class="counter" data-target="120">0</h3>
+                <p>Volunteers</p>
+            </div>
+
+            <div class="card">
+                <h3 class="counter" data-target="50">0</h3>
+                <p>Workshops</p>
+            </div>
+
+            <div class="card">
+                <h3 class="counter" data-target="15">0</h3>
+                <p>Communities</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="gallery hidden">
+
+    <h2>Our Initiatives</h2>
+
+    <div class="gallery-grid">
+
+        <img
+        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+        alt="Initiative">
+
+        <img
+        src="https://images.unsplash.com/photo-1517048676732-d65bc937f952"
+        alt="Workshop">
+
+        <img
+        src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac"
+        alt="Community">
+
+    </div>
+
+</section>
+
+<section class="programs hidden">
+
+<h2>Our Programs</h2>
+
+<div class="program-grid">
+
+<div class="program-card">
+
+<h3>Education</h3>
+
+<p>
+Providing learning opportunities,
+scholarships and digital literacy.
+</p>
+
+</div>
+
+<div class="program-card">
+
+<h3>Healthcare</h3>
+
+<p>
+Health awareness campaigns and
+community support initiatives.
+</p>
+
+</div>
+
+<div class="program-card">
+
+<h3>Leadership</h3>
+
+<p>
+Building confidence and leadership
+skills among women.
+</p>
+
+</div>
+
+<div class="program-card">
+
+<h3>Skill Development</h3>
+
+<p>
+Training programs for employment
+and entrepreneurship.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="stories hidden">
+
+    <h2>Success Stories</h2>
+
+    <div class="story-container">
+
+        <div class="story-card">
+
+            <p>
+                "The foundation helped me
+                develop leadership skills and
+                confidence."
+            </p>
+
+            <h4>- Priya Sharma</h4>
+
+        </div>
+
+        <div class="story-card">
+
+            <p>
+                "I gained valuable skills and
+                opportunities through their
+                workshops."
+            </p>
+
+            <h4>- Anjali Verma</h4>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <section id="volunteer" class="volunteer hidden">
+
+        <h2>Become a Volunteer</h2>
+
+        <form id="volunteerForm">
+
+            <div class="input-group">
+                <input type="text" id="name" placeholder="Your Name">
+                <small id="nameError"></small>
+                </div>
+
+            <div class="input-group">
+                <input type="email" id="email" placeholder="Your Email">
+                <small id="emailError"></small>
+                </div>
+
+            <div class="input-group">
+
+            <select id="interest">
+
+            <option value="">
+            Select Interest Area
+            </option>
+
+            <option>
+            Education
+            </option>
+
+            <option>
+            Healthcare
+            </option>
+
+            <option>
+            Leadership
+            </option>
+
+            <option>
+            Skill Development
+            </option>
+
+            </select>
+
+            </div>
+
+            <div class="input-group">
+                <textarea id="message" rows="5" placeholder="Your Message"></textarea>
+                <small id="messageError"></small>
+                </div>
+
+            <button type="submit">
+                Submit
+            </button>
+
+
+
+        </form>
+
+    </section>
+
+    <div id="toast">
+    Form Submitted Successfully 🎉
+</div>
+
+<section class="contact hidden">
+
+<h2>Contact Us</h2>
+
+<p>Email: contact@shecanfoundation.org</p>
+
+<p>Phone: +91 98765 43210</p>
+
+<p>Location: Lucknow, Uttar Pradesh</p>
+
+</section>
+
+    <footer>
+
+<h3>She Can Foundation</h3>
+
+<p>
+Empowering women through education,
+leadership and community support.
+</p>
+
+<p>
+© 2026 She Can Foundation
+
+Designed & Developed by Tanay Singh
+</p>
+
+<div class="social-icons">
+
+<a href="#">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="#">
+<i class="fab fa-linkedin"></i>
+</a>
+
+<a href="#">
+<i class="fab fa-facebook"></i>
+</a>
+
+<a href="#">
+<i class="fab fa-x-twitter"></i>
+</a>
+
+</div>
+
+</footer>
+
+<button id="topBtn">
+↑
+</button>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
